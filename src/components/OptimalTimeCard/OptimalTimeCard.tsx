@@ -23,11 +23,13 @@ export default function OptimalTimeCard() {
         onChange={val => setValue(val.target.value)}
       />
       <button onClick={calculateOptimalTime}>Find the best time</button>
-      <div>
-        <p>From {data?.from.toDateString()} - {data?.from.getHours().toString().padStart(2, '0')}:{data?.from.getMinutes().toString().padStart(2, '0')}</p>
-        <p>To {data?.to.toDateString()} - {data?.to.getHours().toString().padStart(2, '0')}:{data?.to.getMinutes().toString().padStart(2, '0')}</p>
-        <p>Clean energy percentage: {data?.perc.toFixed(0)}%</p>
-      </div>
+      {data !== null && (
+        <div>
+          <p>From {data?.from.toDateString()} - {data?.from.getHours().toString().padStart(2, '0')}:{data?.from.getMinutes().toString().padStart(2, '0')}</p>
+          <p>To {data?.to.toDateString()} - {data?.to.getHours().toString().padStart(2, '0')}:{data?.to.getMinutes().toString().padStart(2, '0')}</p>
+          <p>Clean energy percentage: {data?.perc.toFixed(0)}%</p>
+        </div>
+      )}
     </div>
   );
 }
