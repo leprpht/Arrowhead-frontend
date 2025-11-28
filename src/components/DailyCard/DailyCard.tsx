@@ -15,6 +15,7 @@ export function DailyCard({ data }: Props) {
           </li>
         ))}
       </ul>
+      <h4>Total clean energy usage: {data.totalCleanPerc.toFixed(0)}%</h4>
     </div>
   );
 }

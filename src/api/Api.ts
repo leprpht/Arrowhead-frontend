@@ -8,6 +8,7 @@ export async function getPrognosis(): Promise<DailyEnergyAverage[]> {
   return data.map((item: any) => ({
     date: new Date(item.date),
     averages: item.averages,
+    totalCleanPerc: item.totalCleanPerc,
   }));
 }
 
