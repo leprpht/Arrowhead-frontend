@@ -1,0 +1,33 @@
+import { useState } from "react";
+import { getOptimalChargingTime } from "../../api/Api";
+import type { ChargingTime } from "../../types/ChargingTime";
+
+export default function OptimalTimeCard() {
+  const [data, setData] = useState<ChargingTime | null>(null);
+  const [value, setValue] = useState<string>("1");
+
+  async function calculateOptimalTime() {
+    const result = await getOptimalChargingTime(Number(value));
+    setData(result);
+  }
+
+  return (
+    <div>
+      <h3>Optimal charging time bracket</h3>
+      <input
+        type="number"
+        defaultValue={1}
+        min="1"
+        max="6"
+        value={value}
+        onChange={val => setValue(val.target.value)}
+      />
+      <button onClick={calculateOptimalTime}>Find the best time</button>
+      <div>
+        <p>{data?.from.toISOString()}</p>
+        <p>{data?.to.toISOString()}</p>
+        <p>Clean energy percentage: {data?.perc.toFixed(0)}%</p>
+      </div>
+    </div>
+  );
+}
