@@ -1,0 +1,6 @@
+.daily-cards-grid {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  padding: 1rem;
+}
