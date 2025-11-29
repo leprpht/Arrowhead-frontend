@@ -2,35 +2,54 @@ import { useState } from "react";
 import { getOptimalChargingTime } from "../../api/Api";
 import { formatDateTime } from "../../util/util";
 import type { ChargingTime } from "../../types/ChargingTime";
+import "./OptimalTimeCard.css";
 
 export default function OptimalTimeCard() {
   const [data, setData] = useState<ChargingTime | null>(null);
   const [value, setValue] = useState<string>("1");
+  const [loading, setLoading] = useState(false);
 
   async function calculateOptimalTime() {
-    const result = await getOptimalChargingTime(Number(value));
-    setData(result);
+    setLoading(true);
+    try {
+      const result = await getOptimalChargingTime(Number(value));
+      setData(result);
+    } catch (err) {
+      console.error(err);
+      setData(null);
+    } finally {
+      setLoading(false);
+    }
   }
 
+  const renderData = (value?: string) =>
+    loading ? "Loading..." : value ?? "";
+
   return (
-    <div>
-      <h3>Optimal charging time bracket</h3>
-      <input
-        type="number"
-        defaultValue={1}
-        min="1"
-        max="6"
-        value={value}
-        onChange={val => setValue(val.target.value)}
-      />
-      <button onClick={calculateOptimalTime}>Find the best time</button>
-      {data !== null && (
-        <div>
-          <p>From: {formatDateTime(data?.from)}</p>
-          <p>To: {formatDateTime(data?.to)}</p>
-          <p>Clean energy percentage: {data?.perc.toFixed(0)}%</p>
-        </div>
-      )}
+    <div className="optimal-card">
+      <h3 className="optimal-card__title">
+        Enter the charging duration in hours to find the optimal time window.
+      </h3>
+
+      <div className="optimal-card__controls">
+        <input
+          type="number"
+          min="1"
+          max="6"
+          value={value}
+          className="optimal-card__input"
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <button className="optimal-card__button" onClick={calculateOptimalTime}>
+          <p className="optimal-card__button-text">Enter</p>
+        </button>
+      </div>
+
+      <div className="optimal-card__results">
+        <p><strong>From:</strong> {renderData(data ? formatDateTime(data.from) : undefined)}</p>
+        <p><strong>To:</strong> {renderData(data ? formatDateTime(data.to) : undefined)}</p>
+        <p><strong>Clean energy:</strong> {renderData(data ? data.perc.toFixed(0) + "%" : undefined)}</p>
+      </div>
     </div>
   );
 }
