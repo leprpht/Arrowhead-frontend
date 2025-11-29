@@ -1,5 +1,23 @@
 :root {
   --font-primary: "Quantico", sans-serif;
+  --background-gradient: linear-gradient(270deg, #262f41 0%, #222933 100%);
+  --background-color-lighter: #222933;
+  --background-color-darker: #0c1927;
+  --button-color: #8567fb;
+  --button-hover-color: #6460e8;
+  --text-color-primary: #ffffff;
+  --text-color-secondary: #a0a0a0;
 
   font-family: var(--font-primary);
+}
+
+body,
+html,
+#root {
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  background: var(--background-gradient);
 }

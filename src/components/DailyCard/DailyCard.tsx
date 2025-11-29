@@ -1,6 +1,7 @@
 import type { DailyEnergyAverage } from "../../types/DailyEnergyAverage";
 import { capitalize } from "../../util/util";
 import "./DailyCard.css";
+import leaf from "../../assets/leaf.svg"
 
 type Props = {
   data: DailyEnergyAverage;
@@ -18,7 +19,10 @@ export function DailyCard({ data }: Props) {
         </li>
       ))}
       </ul>
-      <h4 className="daily-card__clean">Total clean energy: {data.totalCleanPerc.toFixed(0)}%</h4>
+      <div className="daily-card__footer">
+        <img src={leaf} height={25} />
+        <h4 className="daily-card__clean">Total clean energy: {data.totalCleanPerc.toFixed(0)}%</h4>
+      </div>
     </div>
   );
 }

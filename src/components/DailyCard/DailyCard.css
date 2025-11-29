@@ -1,19 +1,18 @@
 .daily-card {
-  background: #ffffff;
+  background: var(--background-color-darker);
   border-radius: 12px;
   padding: 16px 18px;
   width: 400px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  color: var(--text-color-primary);
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .daily-card__date {
-  margin: 0;
+  margin: 0 0 15px;
   font-size: 1.6rem;
   font-weight: 600;
-  opacity: 0.85;
 }
 
 .daily-card__list {
@@ -42,8 +41,16 @@
 }
 
 .daily-card__clean {
-  margin: 6px 0 0;
+  margin: 0;
   font-size: 1.2rem;
   font-weight: 600;
   opacity: 0.9;
+}
+
+.daily-card__footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
