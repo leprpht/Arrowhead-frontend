@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getOptimalChargingTime } from "../../api/Api";
-import { formatDateTime } from "../../util/util";
+import { formatDateTime, formatPercentage } from "../../util/util";
 import type { ChargingTime } from "../../types/ChargingTime";
 import "./OptimalTimeCard.css";
 
@@ -48,7 +48,7 @@ export default function OptimalTimeCard() {
       <div className="optimal-card__results">
         <p><strong>From:</strong> {renderData(data ? formatDateTime(data.from) : undefined)}</p>
         <p><strong>To:</strong> {renderData(data ? formatDateTime(data.to) : undefined)}</p>
-        <p><strong>Clean energy:</strong> {renderData(data ? data.perc.toFixed(0) + "%" : undefined)}</p>
+        <p><strong>Clean energy:</strong> {renderData(data ? formatPercentage(data.perc) : undefined)}</p>
       </div>
     </div>
   );

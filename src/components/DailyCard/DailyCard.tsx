@@ -1,5 +1,5 @@
 import type { DailyEnergyAverage } from "../../types/DailyEnergyAverage";
-import { capitalize } from "../../util/util";
+import { capitalize, formatPercentage } from "../../util/util";
 import "./DailyCard.css";
 import leaf from "../../assets/leaf.svg"
 
@@ -15,13 +15,13 @@ export function DailyCard({ data }: Props) {
         {data.averages.map((mix, index) => (
         <li key={index} className="daily-card__item">
           <span className="daily-card__fuel">{capitalize(mix.fuel)}</span>
-          <span className="daily-card__perc">{mix.perc.toFixed(0)}%</span>
+          <span className="daily-card__perc">{formatPercentage(mix.perc)}</span>
         </li>
       ))}
       </ul>
       <div className="daily-card__footer">
         <img src={leaf} height={25} />
-        <h4 className="daily-card__clean">Total clean energy: {data.totalCleanPerc.toFixed(0)}%</h4>
+        <h4 className="daily-card__clean">Total clean energy: {formatPercentage(data.totalCleanPerc)}</h4>
       </div>
     </div>
   );

@@ -12,3 +12,12 @@ export function formatDateTime(date: Date): string {
         date.getMinutes().toString().padStart(2, '0')
     );
 }
+
+export function formatPercentage(value: number): string {
+    if (value === null) return "";
+
+    const rounded = Math.round(value * 10) / 10;
+    return Number.isInteger(rounded)
+        ? rounded.toFixed(0) + "%"
+        : rounded.toFixed(1) + "%";
+}
