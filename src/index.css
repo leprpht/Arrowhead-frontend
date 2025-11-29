@@ -1,3 +1,5 @@
 :root {
-  font-family: "Quantico", sans-serif;
+  --font-primary: "Quantico", sans-serif;
+
+  font-family: var(--font-primary);
 }

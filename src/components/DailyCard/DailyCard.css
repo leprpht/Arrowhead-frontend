@@ -1,0 +1,48 @@
+.daily-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 18px;
+  width: 240px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.daily-card__date {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.daily-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.daily-card__item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.daily-card__fuel {
+  opacity: 0.85;
+}
+
+.daily-card__perc {
+  font-weight: 600;
+}
+
+.daily-card__clean {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
