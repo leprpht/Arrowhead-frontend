@@ -1,12 +1,17 @@
 :root {
   --font-primary: "Quantico", sans-serif;
-  --background-gradient: linear-gradient(270deg, #262f41 0%, #222933 100%);
-  --background-color-lighter: #222933;
-  --background-color-darker: #0c1927;
-  --button-color: #8567fb;
-  --button-hover-color: #6460e8;
-  --text-color-primary: #ffffff;
-  --text-color-secondary: #a0a0a0;
+  --background-gradient: linear-gradient(
+    30deg,
+    #0f0c29 0%,
+    #302b63 50%,
+    #24243e 100%
+  );
+  --background-color-lighter: #1e2233;
+  --background-color-darker: #0a0e1c;
+  --button-color: #9b59ff;
+  --button-hover-color: #7d3cff;
+  --text-color-primary: #f5f5f5;
+  --text-color-secondary: #b0b0c0;
 
   font-family: var(--font-primary);
 }
