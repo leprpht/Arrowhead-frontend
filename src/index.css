@@ -25,4 +25,7 @@ html,
   box-sizing: border-box;
   height: 100%;
   background: var(--background-gradient);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
