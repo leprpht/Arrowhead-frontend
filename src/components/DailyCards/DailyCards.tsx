@@ -72,6 +72,9 @@ export default function DailyCards() {
           <DailyCard key={day.date.toISOString()} data={day} />
         ))}
       </div>
+      <p className="daily-cards__subtitle">
+        Forecasts for today and the next two days on the daily energy mix based on the data from National Energy System Operator (NESO).
+      </p>
     </section>
   );
 }

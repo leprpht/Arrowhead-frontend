@@ -3,9 +3,14 @@
 }
 
 .daily-cards-grid {
-  height: 100vh;
   display: flex;
   justify-content: space-evenly;
   gap: 1.5rem;
   padding: 1rem;
+}
+
+.daily-cards__subtitle {
+  font-size: 1.2rem;
+  margin-left: 5rem;
+  color: #b0b0c0;
 }

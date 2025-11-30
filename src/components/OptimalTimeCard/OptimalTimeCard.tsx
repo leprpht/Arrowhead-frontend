@@ -54,6 +54,15 @@ export default function OptimalTimeCard() {
           <p><strong>Clean energy:</strong> {renderData(data ? formatPercentage(data.perc) : undefined)}</p>
         </div>
       </div>
+      <p className="optimal-card__subtitle">
+        Calculate the best time to charge your electric vehicle based on the predicted clean energy availability in the UK's energy mix.
+      </p>
+      <p className="optimal-card__subtitle">
+        Adjust the duration to see how it affects the optimal charging window. Available durations range from 1 to 6 hours.
+      </p>
+      <p className="optimal-card__subtitle">
+        Data sourced from the National Energy System Operator (NESO) forecasts.
+      </p>
     </section>
   );
 }
