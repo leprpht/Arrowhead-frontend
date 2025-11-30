@@ -8,15 +8,16 @@ export default function NavBar() {
         <img className="navbar__logo" src={leaf} />
         <h1 className="navbar__title">Arrowhead</h1>
       </div>
+
       <ul className="navbar__links">
         <li className="navbar__link">
-            <a href="/">Home</a>
+            <a href="#home">Home</a>
         </li>
         <li className="navbar__link">
-            <a href="/">Dashboard</a>
+            <a href="#dashboard">Dashboard</a>
         </li>
         <li className="navbar__link">
-            <a href="/">Charging</a>
+            <a href="#charging">Charging</a>
         </li>
       </ul>
     </nav>

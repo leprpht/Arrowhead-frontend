@@ -8,9 +8,18 @@ function App() {
   return (
     <>
       <NavBar />
-      <Hero />
-      <DailyCards />
-      <OptimalTimeCard />
+
+      <section id="home">
+        <Hero />
+      </section>
+
+      <section id="dashboard">
+        <DailyCards />
+      </section>
+      
+      <section id="charging">
+        <OptimalTimeCard />
+      </section>
     </>
   )
 }

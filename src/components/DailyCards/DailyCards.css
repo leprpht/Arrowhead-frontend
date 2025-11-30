@@ -1,5 +1,6 @@
 .daily-cards-section {
-  height: 100vh;
+  height: 95vh;
+  padding: 30px;
 }
 
 .daily-cards-grid {
