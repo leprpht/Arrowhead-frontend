@@ -3,6 +3,7 @@
   border-radius: 12px;
   padding: 16px 18px;
   width: 400px;
+  height: 385px;
   color: var(--text-color-primary);
   display: flex;
   flex-direction: column;

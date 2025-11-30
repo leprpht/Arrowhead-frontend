@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getPrognosis } from "../../api/Api";
 import { DailyCard } from "../DailyCard/DailyCard";
+import Title from "../Title/Title";
 import type { DailyEnergyAverage } from "../../types/DailyEnergyAverage";
 import "./DailyCards.css";
 
@@ -18,10 +19,13 @@ export default function DailyCards() {
   }, []);
 
   return (
-    <div className="daily-cards-grid">
-      {data?.map((day) => (
-        <DailyCard key={day.date.toISOString()} data={day} />
-      ))}
-    </div>
+    <>
+      <Title title="Energy Mix Forecast" />
+      <div className="daily-cards-grid">
+        {data?.map((day) => (
+          <DailyCard key={day.date.toISOString()} data={day} />
+        ))}
+      </div>
+    </>
   );
 }
