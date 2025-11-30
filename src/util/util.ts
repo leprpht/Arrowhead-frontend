@@ -13,10 +13,13 @@ export function formatDateTime(date: Date): string {
     );
 }
 
-export function formatPercentage(value: number): string {
-    if (value === null) return "";
+export function formatPercentage(value: string): string {
+    if (value === "No data yet" || value === "Loading...") return value;
+    const num = Number(value);
 
-    const rounded = Math.round(value * 10) / 10;
+    if (num === null) return "";
+
+    const rounded = Math.round(num * 10) / 10;
     return Number.isInteger(rounded)
         ? rounded.toFixed(0) + "%"
         : rounded.toFixed(1) + "%";
