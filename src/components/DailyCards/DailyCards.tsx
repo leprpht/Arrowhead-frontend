@@ -65,13 +65,13 @@ export default function DailyCards() {
   }, [data]);
 
   return (
-    <>
+    <section className="daily-cards-section">
       <Title title="Energy Mix Forecast" />
       <div className="daily-cards-grid">
         {(data || placeholderData()).map((day) => (
           <DailyCard key={day.date.toISOString()} data={day} />
         ))}
       </div>
-    </>
+    </section>
   );
 }

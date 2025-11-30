@@ -1,3 +1,7 @@
+.optimal-time-section {
+  height: 95vh;
+}
+
 .optimal-card {
   background: var(--background-color-darker);
   border-radius: 14px;
