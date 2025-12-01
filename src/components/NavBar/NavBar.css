@@ -39,3 +39,9 @@
 .navbar__link a:hover {
   background-color: #24243e;
 }
+
+@media (max-width: 600px) {
+  .navbar {
+    visibility: hidden;
+  }
+}
