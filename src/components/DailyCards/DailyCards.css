@@ -26,4 +26,9 @@
     align-items: center;
     justify-content: center;
   }
+
+  .daily-cards__subtitle {
+    margin: 15px;
+    text-align: center;
+  }
 }

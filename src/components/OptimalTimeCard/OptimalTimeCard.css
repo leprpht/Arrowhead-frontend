@@ -101,3 +101,25 @@
   margin-left: 5rem;
   color: #b0b0c0;
 }
+
+@media (max-width: 900px) {
+  .optimal-time-section {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .optimal-card {
+    padding: 1rem 1.25rem;
+    max-width: 75vw;
+    margin-bottom: 4rem;
+  }
+
+  .optimal-card__controls {
+    justify-content: center;
+  }
+
+  .optimal-card__subtitle {
+    margin: 10px;
+    text-align: center;
+  }
+}
