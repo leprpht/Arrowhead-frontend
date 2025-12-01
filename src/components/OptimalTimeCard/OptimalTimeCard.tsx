@@ -13,6 +13,11 @@ export default function OptimalTimeCard() {
   async function calculateOptimalTime() {
     setLoading(true);
     try {
+      if (value === "" || isNaN(Number(value)) || Number(value) < 1 || Number(value) > 6) {
+        setData(null);
+        setLoading(false);
+        return;
+      }
       const result = await getOptimalChargingTime(Number(value));
       setData(result);
     } catch (err) {
